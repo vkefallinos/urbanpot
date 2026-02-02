@@ -1,0 +1,26 @@
+{
+  "name": "urbanpot-mapper",
+  "version": "1.0.0",
+  "description": "A web-based application for urban gardeners to visualize and manage gardening spaces",
+  "main": "index.html",
+  "scripts": {
+    "start": "npx http-server -p 8080 -o",
+    "serve": "npx http-server -p 8080"
+  },
+  "keywords": [
+    "gardening",
+    "urban",
+    "mapping",
+    "horticulture",
+    "landscape"
+  ],
+  "author": "",
+  "license": "MIT",
+  "devDependencies": {
+    "http-server": "^14.1.1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/vkefallinos/urbanpot"
+  }
+}
