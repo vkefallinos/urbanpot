@@ -4,8 +4,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>UrbanPot Mapper</title>
-    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
-    <link rel="stylesheet" href="https://unpkg.com/leaflet-draw@1.0.4/dist/leaflet.draw.css" />
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
@@ -116,17 +114,21 @@
             </div>
 
             <div class="map-container">
-                <div id="map"></div>
+                <canvas id="mapCanvas"></canvas>
+                <div class="map-controls">
+                    <button id="zoomInBtn" class="map-btn">+</button>
+                    <button id="zoomOutBtn" class="map-btn">-</button>
+                    <button id="resetViewBtn" class="map-btn">⌂</button>
+                </div>
                 <div class="map-info">
-                    <p>📍 Click the drawing tools to create boundaries and containers on the map</p>
-                    <p>🗺️ Use scroll wheel to zoom, drag to pan</p>
+                    <p>📍 Click drawing tools to create boundaries and containers</p>
+                    <p>🗺️ Drag to pan, use +/- to zoom</p>
+                    <p id="drawingInstructions"></p>
                 </div>
             </div>
         </div>
     </div>
 
-    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
-    <script src="https://unpkg.com/leaflet-draw@1.0.4/dist/leaflet.draw.js"></script>
     <script src="app.js"></script>
 </body>
 </html>
