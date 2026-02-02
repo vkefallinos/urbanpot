@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UrbanPot Mapper</title>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+    <link rel="stylesheet" href="https://unpkg.com/leaflet-draw@1.0.4/dist/leaflet.draw.css" />
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>🌱 UrbanPot Mapper</h1>
+            <p>Visualize and manage your urban gardening spaces</p>
+        </header>
+        
+        <div class="main-content">
+            <div class="sidebar">
+                <div class="section">
+                    <h2>Drawing Tools</h2>
+                    <div class="button-group">
+                        <button id="drawBoundaryBtn" class="btn btn-primary">
+                            📐 Draw Boundary
+                        </button>
+                        <button id="drawContainerBtn" class="btn btn-primary">
+                            📦 Draw Container
+                        </button>
+                        <button id="clearAllBtn" class="btn btn-danger">
+                            🗑️ Clear All
+                        </button>
+                    </div>
+                </div>
+
+                <div class="section">
+                    <h2>Container Designer</h2>
+                    <form id="containerForm">
+                        <div class="form-group">
+                            <label for="containerName">Container Name:</label>
+                            <input type="text" id="containerName" class="form-control" placeholder="e.g., Raised Bed #1">
+                        </div>
+                        <div class="form-group">
+                            <label for="containerType">Container Type:</label>
+                            <select id="containerType" class="form-control">
+                                <option value="raised-bed">Raised Bed</option>
+                                <option value="pot">Pot</option>
+                                <option value="planter-box">Planter Box</option>
+                                <option value="in-ground">In-Ground</option>
+                                <option value="vertical-garden">Vertical Garden</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="containerDepth">Depth (cm):</label>
+                            <input type="number" id="containerDepth" class="form-control" placeholder="30">
+                        </div>
+                    </form>
+                </div>
+
+                <div class="section">
+                    <h2>Substrate Composition</h2>
+                    <form id="substrateForm">
+                        <div class="form-group">
+                            <label for="soilPercent">Soil (%):</label>
+                            <input type="number" id="soilPercent" class="form-control" min="0" max="100" value="40">
+                        </div>
+                        <div class="form-group">
+                            <label for="compostPercent">Compost (%):</label>
+                            <input type="number" id="compostPercent" class="form-control" min="0" max="100" value="30">
+                        </div>
+                        <div class="form-group">
+                            <label for="perlitePercent">Perlite (%):</label>
+                            <input type="number" id="perlitePercent" class="form-control" min="0" max="100" value="20">
+                        </div>
+                        <div class="form-group">
+                            <label for="vermiculitePercent">Vermiculite (%):</label>
+                            <input type="number" id="vermiculitePercent" class="form-control" min="0" max="100" value="10">
+                        </div>
+                        <div class="substrate-total">Total: <span id="substrateTotal">100</span>%</div>
+                    </form>
+                </div>
+
+                <div class="section">
+                    <h2>Plant Placement</h2>
+                    <form id="plantForm">
+                        <div class="form-group">
+                            <label for="plantName">Plant Name:</label>
+                            <input type="text" id="plantName" class="form-control" placeholder="e.g., Tomato">
+                        </div>
+                        <div class="form-group">
+                            <label for="plantVariety">Variety:</label>
+                            <input type="text" id="plantVariety" class="form-control" placeholder="e.g., Cherry">
+                        </div>
+                        <div class="form-group">
+                            <label for="plantQuantity">Quantity:</label>
+                            <input type="number" id="plantQuantity" class="form-control" min="1" value="1">
+                        </div>
+                        <div class="form-group">
+                            <label for="plantSpacing">Spacing (cm):</label>
+                            <input type="number" id="plantSpacing" class="form-control" placeholder="30">
+                        </div>
+                        <div class="form-group">
+                            <label for="plantDate">Planting Date:</label>
+                            <input type="date" id="plantDate" class="form-control">
+                        </div>
+                        <button type="button" id="addPlantBtn" class="btn btn-success">
+                            🌿 Add Plant
+                        </button>
+                    </form>
+                    <div id="plantList" class="plant-list"></div>
+                </div>
+
+                <div class="section">
+                    <h2>Garden Spaces</h2>
+                    <div id="spacesList" class="spaces-list"></div>
+                </div>
+            </div>
+
+            <div class="map-container">
+                <div id="map"></div>
+                <div class="map-info">
+                    <p>📍 Click the drawing tools to create boundaries and containers on the map</p>
+                    <p>🗺️ Use scroll wheel to zoom, drag to pan</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    <script src="https://unpkg.com/leaflet-draw@1.0.4/dist/leaflet.draw.js"></script>
+    <script src="app.js"></script>
+</body>
+</html>
