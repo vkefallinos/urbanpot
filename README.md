@@ -78,10 +78,7 @@ cd urbanpot
 
 ## Browser Compatibility
 
-- Chrome 90+
-- Firefox 88+
-- Safari 14+
-- Edge 90+
+Works with all modern browsers (latest versions of Chrome, Firefox, Safari, and Edge).
 
 ## Contributing
 

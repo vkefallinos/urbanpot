@@ -330,7 +330,7 @@ header p {
     }
 }
 
-/* Leaflet custom styles */
+/* Custom popup styles */
 .popup-overlay {
     position: absolute;
     background: white;

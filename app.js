@@ -242,7 +242,7 @@ class UrbanPotMapper {
                 vermiculite: document.getElementById('vermiculitePercent').value
             };
         } else {
-            data.name = 'Garden Boundary #' + (this.currentSpaceId + 1);
+            data.name = 'Garden Boundary #' + this.currentSpaceId;
         }
 
         return data;
@@ -514,7 +514,7 @@ class UrbanPotMapper {
             quantity: document.getElementById('plantQuantity').value || 1,
             spacing: document.getElementById('plantSpacing').value || 'Not specified',
             date: document.getElementById('plantDate').value || 'Not specified',
-            id: Date.now()
+            id: ++this.currentSpaceId * 1000 + this.currentPlants.length
         };
 
         this.currentPlants.push(plant);
